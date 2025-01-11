@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+ECE
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+
+    <div class="row">
+
+
+        <div class="col-md-4"></div>
+        
+        <div class="col-md-4 jumbotron">
+            <h4 class="text-center bg-info text-white">Add Items</h4>
+        <br>
+        
+        {% with message=get_flashed_messages(with_categories=true) %}
+            {% if message %}
+            {% for category,message in message %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show"
+            role="alert">
+            {{message}}
+        
+            <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        
+        
+            <form action="/ise" method="POST">
+
+                <div class="form-group">
+                    <label for="dept">Department</label>
+                    <select class="form-select" id="dept" name="dept" required>
+                        <option selected disabled value="">ECE</option>
+                        <option>ECE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rno">Room number</label>
+                    <select class="form-select" id="rno" name="rno" required>
+                        <option selected disabled value="">Available rooms are</option>
+                        <option>331</option><option>332</option>
+                        <option>333</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="item" class="form-label">Items</label>
+                    <select class="form-select" id="item" name="item" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Wardrobe</option><option>Table</option>
+                        <option>Fan</option><option>PC</option>
+                    </select>
+                </div>
+        
+                
+                <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
+            </form>
+
+{% endblock body %}

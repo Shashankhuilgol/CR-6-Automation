@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}
+OUT
+{% endblock title %}
+
+{% block body %}
+
+{% with message=get_flashed_messages(with_categories=true) %}
+{% if message %}
+{% for category,message in message %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show"
+role="alert">
+{{message}}
+
+<button type="button" class="close" data-dismiss="alert"
+aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="container mt-5">
+
+    <div class="row">
+
+
+        <div class="col-md-3"></div>
+        
+        <div class="col-md-6 jumbotron">
+            <table class="table">
+                <thead class= "thead-light">
+                <tr>
+                    <th scope:"co1">ITEM_ID
+                    <th scope:"co1">FROM ROOM
+                    <th scope="col">TO ROOM</th>
+                    <th scope="col"Handler/th»
+                </tr>
+                </thead>
+                <tbody>
+                    {% for post in query %}   
+                    <tr>
+                        <th scope="row">{{post.item_id}}</th>
+                        <th scope="row">{{post.from_rno}}</th>
+                        <th scope="row">{{post.to_rno}}</th>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

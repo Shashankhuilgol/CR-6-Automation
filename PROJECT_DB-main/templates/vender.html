@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}
+VENDORS
+{% endblock title %}
+
+{% block body %}
+
+
+            <div class="container mt-5">
+
+                {% with message=get_flashed_messages(with_categories=true) %}
+            {% if message %}
+            {% for category,message in message %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show"
+            role="alert">
+            {{message}}
+        
+            <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+                <div class="row">
+            
+            
+                    <div class="col-md-3"></div>
+                    
+                    <div class="col-md-6 jumbotron">
+                        <table class="table">
+                            <thead class= "thead-light">
+                            <tr>
+                                <th scope:"co1">VENDOR_ID
+                                <th scope:"co1">VENDOR_NAME
+                                <th scope="col"Handler/th»
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in query %}   
+                                <tr>
+                                    <th scope="row">{{post.vid}}</th>
+                                    <th scope="row">{{post.name}}</th>
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table><br>
+                        <form action="/van" method="POST">
+                            <label for="deptt">To add new Vendors</label>
+                            <input type="text" class="form-control" id="vid" name="vid"required placeholder="enter vendor id">
+                            <input type="text" class="form-control" id="vname" name="vname"required placeholder="enter vendor name">    
+                            <button type="submit" class="btn btn-success tbn-sm btn-block">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                
+
+{% endblock body %}

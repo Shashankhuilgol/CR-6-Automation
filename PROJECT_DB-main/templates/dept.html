@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}
+DEPARTMENT
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="coontainer mt-4">
+<div class="row">
+
+<div class="col-md-7">
+
+
+    <div class="card" style="width: 35rem;">
+<img src="static/images/4.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+    <h5 class="card-title">College Departments</h5>
+    <p class="card-text">Department Names</p>
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Computer Science and Engineering</li>
+    <li class="list-group-item">Information Science and Engineering</li>
+    <li class="list-group-item">Mechanical Engineering</li>
+    <li class="list-group-item">Civil Engineering</li>
+    <li class="list-group-item">Electrical Engineering</li>
+</ul>
+<div class="card-body">
+    <a href="#" class="card-link">About</a>
+</div>
+</div>
+</div>
+
+
+
+    <div class="col-md-3 jumbotron">
+        <h4 class="text-center bg-danger text-white">Please veryfy</h4>
+        <br>
+            <form action="/movement" method="POST">
+                <div class="form-group">
+                    <label for="dept">Items</label>
+                    <select class="form-select" id="itemm" name='itemm'required>
+                        <option selected disabled value="">Available are</option>
+                        {% for post in query[1] %}
+                        <option>{{post.item_id}} in {{post.rno}}</option>
+                        {% endfor %}
+                    </select><br><br><br>
+
+                    <label for="dept">Select again for conformation </label>
+                    <div class="form-group">
+                        <select class="form-select" id="item" name='item'required>
+                            <option selected disabled value="">Available are</option>
+                            {% for post in query[2] %}
+                            <option>{{post.item_id}}</option>
+                            {% endfor %}
+                        </select>
+                        </div><br>
+                        <label for="dept">Room(from)</label>
+                        <div class="form-group">
+                            <select class="form-select" id="frno" name="frno"required>
+                                <option selected disabled value="">Available are</option>
+                                {% for post in query[0] %}
+                                <option>{{post.rno}}</option>
+                                {% endfor %}
+                            </select>
+                        </div><br>
+                        <label for="dept">Room(to)</label>
+                        <div class="form-group">
+                            <select class="form-select" id="trno" name="trno"required>
+                                <option selected disabled value="">Available are</option>
+                                {% for post in query[3] %}
+                                <option>{{post.rno}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+                </div>
+        
+                    
+                <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
+            </form>
+        
+    </div>
+
+
+
+
+
+
+
+{% endblock body %}
+

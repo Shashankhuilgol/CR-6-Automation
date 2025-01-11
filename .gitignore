@@ -1,0 +1,33 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python bytecode
+pycache/
+*.pyc
+*.pyo
+
+# Database
+*.db
+*.sqlite
+
+# Flask debug and coverage files
+*.log
+.flaskenv
+.flask_sessions
+.coverage
+
+# IDE or text editor config
+.vscode/
+.idea/
+.sublime-project
+.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*.bak
+*.swp
+*.tmp

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}
+OUT
+{% endblock title %}
+
+{% block body %}
+
+
+
+<div class="coontainer mt-4">
+
+
+    <div class="row">
+
+
+        <div class="col-md-4">
+            <form action="/movement1" method="POST">   
+                <button type="submit" class="btn btn-dark tbn-sm btn-block">Click here to see movement list</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <form action="/out" method="POST"> 
+                <label for="rno">Room number:</label>
+                    <select class="form-select" id="rno" name="rno" required>
+                        <option selected disabled value="">Select the room number</option>
+                        {% for post in query[0] %}
+                        <option>{{post.rno}}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" class="btn btn-secondary tbn-sm btn-block">Submit</button>
+            </form>
+        </div>
+    
+{% with message=get_flashed_messages(with_categories=true) %}
+{% if message %}
+{% for category,message in message %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show"
+role="alert">
+{{message}}
+
+<button type="button" class="close" data-dismiss="alert"
+aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+
+<table class="table">
+    <thead class= "thead-light">
+    <tr>
+        <th scope:"co1">ITEM_ID
+        <th scope:"co1">ITEM_NAME
+        <th scope="col">ROOM_NUMBER</th>
+        <th scope="col">DEPARTMENT</th>
+        <th scope="col"Handler/th»
+    </tr>
+    </thead>
+    <tbody>
+        {% for post in query[1] %}   
+        <tr>
+            <th scope="row">{{post.item_id}}</th>
+            <th scope="row">{{post.item_name}}</th>
+            <th scope="row">{{post.rno}}</th>
+            <th scope="row">{{post.dname}}</th>
+        </tr>
+    {% endfor %}
+        
+        </tbody>
+    </table>
+
+
+{% endblock body %}

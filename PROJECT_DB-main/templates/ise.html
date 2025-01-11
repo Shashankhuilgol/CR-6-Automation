@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}
+ISE
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+
+    <div class="row">
+
+
+        <div class="col-md-4"></div>
+        
+        <div class="col-md-4 jumbotron">
+            <h4 class="text-center bg-info text-white">Add Items</h4>
+        <br>
+        
+        {% with message=get_flashed_messages(with_categories=true) %}
+            {% if message %}
+            {% for category,message in message %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show"
+            role="alert">
+            {{message}}
+        
+            <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        
+        
+            <form action="/ise" method="POST">
+
+                <div class="form-group">
+                    <label for="dept">Department:</label>
+                    <select class="form-select" id="dept" name="dept" required>
+                        <option selected disabled value="">ISE</option>
+                        <option>ISE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rno">Room number:</label>
+                    <select class="form-select" id="rno" name="rno" required>
+                        <option selected disabled value="">Choose</option>
+                        {% for post in query[1] %}
+                        <option>{{post.rno}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="item" class="form-label">Items availabe:</label>
+                    <select class="form-select" id="item" name="item" required>
+                        <option selected disabled value="">Choose</option>
+                        {% for post in query[0] %}
+                        <option>{{post.item_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vid" class="form-label">Vendors available:</label>
+                    <select class="form-select" id="vid" name="vid" >
+                        <option selected disabled value="">Choose</option>
+                        {% for post in query[2] %}
+                        <option>{{post.vid}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+        
+                
+                <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
+            </form>
+
+{% endblock body %}

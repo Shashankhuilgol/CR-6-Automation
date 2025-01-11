@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}
+ITEMS
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container mt-5">
+
+    <div class="row">
+
+
+        <div class="col-md-3">
+
+
+
+            <table class="table">
+                <thead class= "thead-light">
+                <tr>
+                    <th scope:"co1">ITEMS
+                    <th scope="col"Handler/th»
+                </tr>
+                </thead>
+                <tbody>
+                    {% for post in query %}   
+                    <tr>
+                        <th scope="row">{{post.item_name}}</th>
+                    </tr>
+                {% endfor %}
+                    
+                    </tbody>
+                </table><br>
+                <form action="/cat" method="POST">
+                    <label for="deptt">To add new item</label>
+                    <input type="text" class="form-control" id="item" name="item"required placeholder="enter item name">
+                        <button type="submit" class="btn btn-success tbn-sm btn-block">Add</button>
+                </form>
+        </div>
+        <div class="col-md-2"></div>
+
+        
+        <div class="col-md-3 jumbotron">
+            <h4 class="text-center bg-info text-white">Add Items</h4>
+        <br>
+        
+        {% with message=get_flashed_messages(with_categories=true) %}
+            {% if message %}
+            {% for category,message in message %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show"
+            role="alert">
+            {{message}}
+        
+            <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+            
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        
+            <form action="/item" method="POST">
+                <div class="form-group">
+                    <label for="dept">Departments</label>
+                    <select class="form-select" id="dept" name='dept'required>
+                        <option selected disabled value="">Available are</option>
+                        <option>ISE</option>
+                    </select><br>
+                </div>
+        
+                    
+                <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-md-2"></div>
+            <div class="col-md-2 jumbotron">
+                    <h4 class="text-center bg-dark text-white">To move items</h4>
+                <br>
+            
+                <form action="/dept" method="POST">   
+                    <div class="form-group">
+                        <label for="dept">Departments</label>
+                        <select class="form-select" id="dept" name='dept'required>
+                            <option selected disabled value="">Available are</option>
+                            <option>ISE</option>
+                        </select><br>
+                    </div>
+                    
+                        <button type="submit" class="btn btn-danger tbn-sm btn-block">Click</button>
+                </form>
+    
+                
+            </div>
+
+
+{% endblock body %}
