@@ -1,62 +1,54 @@
 {% extends 'base.html' %}
+
 {% block title %}
 LOGS
 {% endblock title %}
 
 {% block body %}
-
-
-            <div class="container mt-5">
-
-                {% with message=get_flashed_messages(with_categories=true) %}
-            {% if message %}
-            {% for category,message in message %}
-            
-            <div class="alert alert-{{category}} alert-dismissible fade show"
-            role="alert">
-            {{message}}
-        
-            <button type="button" class="close" data-dismiss="alert"
-            aria-label="Close">
+<div class="container mt-5">
+    {% with message=get_flashed_messages(with_categories=true) %}
+    {% if message %}
+    {% for category,message in message %}
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
 
-                <div class="row">
-            
-            
-                    <div class="col-md-2"></div>
-                    
-                    <div class="col-md-8 jumbotron">
-                        <table class="table">
-                            <thead class= "thead-light">
-                            <tr>
-                                <th scope:"co1">ID
-                                <th scope:"co1">ITEM_ID
-                                <th scope:"co1">ACTION
-                                <th scope:"co1">TIME
-                                <th scope="col"Handler/th»
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {% for post in query %}   
-                                <tr>
-                                    <th scope="row">{{post.id}}</th>
-                                    <th scope="row">{{post.item_id}}</th>
-                                    <th scope="row">{{post.action}}</th>
-                                    <th scope="row">{{post.cdate}}</th>
-                                </tr>
-                                {% endfor %}
-                                
-                            </tbody>
-                        </table><br>
-                    </div>
-                </div>
-            </div>
-                
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 jumbotron">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">ITEM_ID</th>
+                        <th scope="col">ACTION</th>
+                        <th scope="col">TIME</th>
+                        <th scope="col">Handler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in query %}
+                    <tr>
+                        <th scope="row">{{post.id}}</th>
+                        <th scope="row">{{post.item_id}}</th>
+                        <th scope="row">{{post.action}}</th>
+                        <th scope="row">{{post.cdate}}</th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+</div>
+
+<!-- Link to logs.css -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/logs.css') }}">
 
 {% endblock body %}

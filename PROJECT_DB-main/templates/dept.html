@@ -3,39 +3,35 @@
 DEPARTMENT
 {% endblock title %}
 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dept.css') }}">
+{% endblock css %}
+
 {% block body %}
-
-
-<div class="coontainer mt-4">
-<div class="row">
-
-<div class="col-md-7">
-
-
-    <div class="card" style="width: 35rem;">
-<img src="static/images/4.jpg" class="card-img-top" alt="...">
-<div class="card-body">
-    <h5 class="card-title">College Departments</h5>
-    <p class="card-text">Department Names</p>
-</div>
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">Computer Science and Engineering</li>
-    <li class="list-group-item">Information Science and Engineering</li>
-    <li class="list-group-item">Mechanical Engineering</li>
-    <li class="list-group-item">Civil Engineering</li>
-    <li class="list-group-item">Electrical Engineering</li>
-</ul>
-<div class="card-body">
-    <a href="#" class="card-link">About</a>
-</div>
-</div>
-</div>
-
-
-
-    <div class="col-md-3 jumbotron">
-        <h4 class="text-center bg-danger text-white">Please veryfy</h4>
-        <br>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/4.jpg') }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">College Departments</h5>
+                    <p class="card-text">Department Names</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Computer Science and Engineering</li>
+                    <li class="list-group-item">Information Science and Engineering</li>
+                    <li class="list-group-item">Mechanical Engineering</li>
+                    <li class="list-group-item">Civil Engineering</li>
+                    <li class="list-group-item">Electrical Engineering</li>
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">About</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 jumbotron">
+            <h4 class="text-center bg-danger text-white">Please verify</h4>
+            <br>
             <form action="/movement" method="POST">
                 <div class="form-group">
                     <label for="dept">Items</label>
@@ -80,14 +76,8 @@ DEPARTMENT
                     
                 <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
             </form>
-        
+            </form>
+        </div>
     </div>
-
-
-
-
-
-
-
+</div>
 {% endblock body %}
-

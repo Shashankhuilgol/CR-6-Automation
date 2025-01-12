@@ -1,0 +1,31 @@
+.jumbotron {
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+    margin-top: 10px;
+}
+
+form .form-group label {
+    font-weight: bold;
+}
+
+form .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}

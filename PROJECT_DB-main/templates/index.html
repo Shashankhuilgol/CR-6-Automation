@@ -1,4 +1,12 @@
-{% extends 'base.html' %} {% block title %} CR-6 Automation {% endblock title %}
+{% extends 'base.html' %}
+
+{% block title %}CR-6 Automation{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+{% endblock head %}
+
 {% block body %}
 
 <section id="automation-overview">
@@ -18,5 +26,4 @@
         <li><strong>Future Potential:</strong> Expands into autonomous vehicles, smart cities, and industrial robotics.</li>
     </ul>
 </section>
-
 {% endblock body %}

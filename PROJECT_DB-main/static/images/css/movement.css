@@ -1,0 +1,13 @@
+/* movement.css */
+.container {
+    margin-top: 50px;
+}
+
+.jumbotron {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.alert {
+    margin-top: 20px;
+}

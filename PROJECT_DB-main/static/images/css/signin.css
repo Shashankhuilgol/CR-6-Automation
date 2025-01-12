@@ -1,0 +1,39 @@
+/* Custom styles for the sign-in page */
+.jumbotron {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.alert {
+    margin-top: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    font-weight: bold;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+a {
+    font-weight: bold;
+}

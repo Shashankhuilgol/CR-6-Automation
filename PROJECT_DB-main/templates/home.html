@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock css %}
+
 {% block title %}
 HOME
 {% endblock title %}
@@ -7,21 +11,17 @@ HOME
 
 {% with message=get_flashed_messages(with_categories=true) %}
     {% if message %}
-    {% for category,message in message %}
-    
-    <div class="alert alert-{{category}} alert-dismissible fade show"
-    role="alert">
-    {{message}}
-
-    <button type="button" class="close" data-dismiss="alert"
-    aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-    
-    {% endfor %}
+        {% for category, message in message %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
     {% endif %}
-    {% endwith %}
-<h1>Welcome to my project{{name}}</h1>
-{% endblock body %}
+{% endwith %}
+<h1>Welcome to my project {{name}}</h1>
 
+
+{% endblock body %}

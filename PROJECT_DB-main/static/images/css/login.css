@@ -1,0 +1,22 @@
+/* login.css */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.jumbotron {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h4.text-center {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}

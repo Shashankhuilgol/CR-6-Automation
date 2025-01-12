@@ -1,0 +1,21 @@
+/* movement1.css */
+.container {
+    margin-top: 50px;
+}
+
+.jumbotron {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.alert {
+    margin-top: 20px;
+}

@@ -1,0 +1,18 @@
+#automation-overview {
+    text-align: center;
+    margin: 20px;
+}
+
+#automation-overview h2 {
+    color: #007bff;
+}
+
+#automation-details ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#automation-details li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
