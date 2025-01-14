@@ -3,16 +3,14 @@
 DEPARTMENT
 {% endblock title %}
 
-{% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/dept.css') }}">
-{% endblock css %}
-
 {% block body %}
+
 <div class="container mt-4">
     <div class="row">
+        <!-- Department Details Section -->
         <div class="col-md-7">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/4.jpg') }}" class="card-img-top" alt="...">
+            <div class="card" style="width: 35rem;">
+                <img src="static/images/4.jpg" class="card-img-top" alt="College Departments">
                 <div class="card-body">
                     <h5 class="card-title">College Departments</h5>
                     <p class="card-text">Department Names</p>
@@ -25,59 +23,70 @@ DEPARTMENT
                     <li class="list-group-item">Electrical Engineering</li>
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">About</a>
+                    <a href="#" class="btn btn-link">About</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 jumbotron">
-            <h4 class="text-center bg-danger text-white">Please verify</h4>
-            <br>
-            <form action="/movement" method="POST">
-                <div class="form-group">
-                    <label for="dept">Items</label>
-                    <select class="form-select" id="itemm" name='itemm'required>
-                        <option selected disabled value="">Available are</option>
-                        {% for post in query[1] %}
-                        <option>{{post.item_id}} in {{post.rno}}</option>
-                        {% endfor %}
-                    </select><br><br><br>
 
-                    <label for="dept">Select again for conformation </label>
-                    <div class="form-group">
-                        <select class="form-select" id="item" name='item'required>
-                            <option selected disabled value="">Available are</option>
-                            {% for post in query[2] %}
-                            <option>{{post.item_id}}</option>
-                            {% endfor %}
-                        </select>
-                        </div><br>
-                        <label for="dept">Room(from)</label>
-                        <div class="form-group">
-                            <select class="form-select" id="frno" name="frno"required>
+        <!-- Movement Form Section -->
+        <div class="col-md-5">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white text-center">
+                    <h4>Please Verify</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/movement" method="POST">
+                        <!-- Item Selection -->
+                        <div class="mb-3">
+                            <label for="itemm" class="form-label">Items</label>
+                            <select class="form-select" id="itemm" name="itemm" required>
                                 <option selected disabled value="">Available are</option>
-                                {% for post in query[0] %}
-                                <option>{{post.rno}}</option>
-                                {% endfor %}
-                            </select>
-                        </div><br>
-                        <label for="dept">Room(to)</label>
-                        <div class="form-group">
-                            <select class="form-select" id="trno" name="trno"required>
-                                <option selected disabled value="">Available are</option>
-                                {% for post in query[3] %}
-                                <option>{{post.rno}}</option>
+                                {% for post in query[1] %}
+                                <option>{{ post.item_id }} in {{ post.rno }}</option>
                                 {% endfor %}
                             </select>
                         </div>
 
+                        <!-- Confirmation Selection -->
+                        <div class="mb-3">
+                            <label for="item" class="form-label">Select Again for Confirmation</label>
+                            <select class="form-select" id="item" name="item" required>
+                                <option selected disabled value="">Available are</option>
+                                {% for post in query[2] %}
+                                <option>{{ post.item_id }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
 
+                        <!-- Room (From) Selection -->
+                        <div class="mb-3">
+                            <label for="frno" class="form-label">Room (From)</label>
+                            <select class="form-select" id="frno" name="frno" required>
+                                <option selected disabled value="">Available are</option>
+                                {% for post in query[0] %}
+                                <option>{{ post.rno }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Room (To) Selection -->
+                        <div class="mb-3">
+                            <label for="trno" class="form-label">Room (To)</label>
+                            <select class="form-select" id="trno" name="trno" required>
+                                <option selected disabled value="">Available are</option>
+                                {% for post in query[3] %}
+                                <option>{{ post.rno }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-info btn-sm btn-block">Submit</button>
+                    </form>
                 </div>
-        
-                    
-                <button type="submit" class="btn btn-info tbn-sm btn-block">Submit</button>
-            </form>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock body %}

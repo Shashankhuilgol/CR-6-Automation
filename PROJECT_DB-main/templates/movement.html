@@ -6,20 +6,18 @@ Movement
 
 {% block body %}
 
+<!-- Flash Messages Section -->
 {% with message=get_flashed_messages(with_categories=true) %}
-{% if message %}
-{% for category,message in message %}
-<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
-    {{message}}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-{% endfor %}
-{% endif %}
+    {% if message %}
+        {% for category, message in message %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+    {% endif %}
 {% endwith %}
-
-<!-- Link to movement.css -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/movement.css') }}">
 
 {% endblock body %}

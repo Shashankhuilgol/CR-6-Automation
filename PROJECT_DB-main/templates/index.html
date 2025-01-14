@@ -1,29 +1,11 @@
 {% extends 'base.html' %}
-
-{% block title %}CR-6 Automation{% endblock title %}
-
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-
-{% endblock head %}
+{% block title %}
+CR-6 Automation
+{% endblock title %}
 
 {% block body %}
+<h1>Automation is a term for technology applications where
+human input is minimized. This includes business process automation (BPA),
+IT automation, personal applications such as home automation and more.</h1>
 
-<section id="automation-overview">
-    <h2>What is Automation?</h2>
-    <p>Automation involves the use of technology to perform tasks and processes with minimal or no human intervention.</p>
-</section>
-<section id="automation-details">
-    <h2>Key Points About Automation</h2>
-    <ul>
-        <li><strong>Definition:</strong> Automation refers to using technology to execute tasks with reduced human involvement.</li>
-        <li><strong>Scope:</strong> It includes applications in business, IT, and personal areas like home systems.</li>
-        <li><strong>Business Process Automation (BPA):</strong> Streamlines workflows to improve efficiency and reduce errors.</li>
-        <li><strong>IT Automation:</strong> Manages repetitive IT tasks, such as server monitoring and software deployment.</li>
-        <li><strong>Personal Applications:</strong> Includes home automation systems like smart lights and security cameras.</li>
-        <li><strong>Benefits:</strong> Enhances productivity, reduces human errors, and saves time and resources.</li>
-        <li><strong>Technological Impact:</strong> Drives innovation and supports advanced technologies like AI and machine learning.</li>
-        <li><strong>Future Potential:</strong> Expands into autonomous vehicles, smart cities, and industrial robotics.</li>
-    </ul>
-</section>
 {% endblock body %}
