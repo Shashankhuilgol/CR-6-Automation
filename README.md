@@ -12,6 +12,7 @@ Automation involves using technology to perform tasks with minimal human interve
   <img src="https://img.shields.io/badge/Flask-Python%20Web%20Framework-darkgreen?style=for-the-badge&amp;logo=flask&amp;logoColor=white" alt="Flask Badge">
   <img src="https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&amp;logo=mysql&amp;logoColor=white" alt="MySQL Badge">
   <img src="https://img.shields.io/badge/XAMPP-Web%20Server-orange?style=for-the-badge&amp;logo=xampp&amp;logoColor=white" alt="XAMPP Badge">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="MIT License Badge">
   <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" alt="Build Passing Badge">
   <img src="https://img.shields.io/badge/Code%20Quality-Grade%20A-green?style=for-the-badge" alt="Code Quality Badge">
   <img src="https://img.shields.io/github/last-commit/Shashankhuilgol/CR-6-Automation?style=for-the-badge" alt="Last Commit Badge"></p>
