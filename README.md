@@ -158,3 +158,13 @@ Technologies used in the project:
 *   HTML/CSS (Frontend Design)
 *   MYSQL (Database)
 *   XAMPP (Server)
+
+
+
+
+
+
+
+<h2>Like my work?</h2>
+
+If you have any questions or need assistance with the project feel free to connect me through the contact form or email me at email me at [Shashank.huilgol22@gmail.com](mailto:Shashank.huilgol22@gmail.com) .<p>To support this feel free to share your feedback or suggestions!</p>
